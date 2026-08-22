@@ -658,7 +658,8 @@ on_...:
 #### Configuration variables
 
 - **data** (**Required**, int, [templatable](/automations/templates)): The Onkyo RI code to send. Codes are 12 bits
-  wide and differ between models. See the links below.
+  wide, so the range is `0x000` to `0xFFF`. A lambda that returns a wider value is not transmitted and an error
+  is logged. Codes differ between models, see the links below.
 - All other options from [Remote Transmitter Actions](#remote_transmitter-transmit_action).
 
 #### Onkyo RI
