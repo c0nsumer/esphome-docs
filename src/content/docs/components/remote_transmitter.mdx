@@ -667,7 +667,8 @@ on_...:
 Onkyo RI ("Remote Interactive") is a wired protocol, not an infrared one. Onkyo used it to link its
 own components together over a 3.5 mm mono cable.
 
-RI has no carrier, so `carrier_duty_percent` on the transmitter has no effect on it.
+RI has no carrier. `carrier_duty_percent` is still required by `remote_transmitter`, but it has
+no effect on RI.
 
 The RI signal swings between 0 V and 5 V. Most ESP32 GPIOs are 3.3 V. Put a level shifter between the
 GPIO and the RI jack.
