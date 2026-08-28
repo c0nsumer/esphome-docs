@@ -652,7 +652,7 @@ This [action](/automations/actions#all-actions) sends an Onkyo RI remote code to
 ```yaml
 on_...:
   - remote_transmitter.transmit_onkyori:
-      data: 0xD9
+      data: 0xD9 # A-9050 power on; codes differ between models
 ```
 
 #### Configuration variables
@@ -670,8 +670,9 @@ own components together over a 3.5 mm mono cable.
 RI has no carrier. `carrier_duty_percent` is still required by `remote_transmitter`, but it has
 no effect on RI.
 
-The RI signal swings between 0 V and 5 V. Most ESP32 GPIOs are 3.3 V. Put a level shifter between the
-GPIO and the RI jack.
+> [!WARNING]
+> The RI signal swings between 0 V and 5 V. Most ESP32 GPIOs are not 5 V tolerant. Put a level shifter between the
+> GPIO and the RI jack.
 
 Code lists and protocol descriptions are published by the
 [LIRC project](https://lirc.sourceforge.net/remotes/onkyo/Remote_Interactive),
